@@ -1,0 +1,666 @@
+/* 游戏化现代UI美化 */
+html, body {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: linear-gradient(120deg, #f7f9fa 0%, #e3e8ee 100%);
+  background-attachment: fixed;
+  font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Arial', sans-serif;
+  overflow-x: hidden;
+  color: #222;
+  letter-spacing: 0.03em;
+}
+
+/* 柔和渐变动画背景 */
+.animated-gradient-bg {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg, #1e3c72, #2a5298, #6dd5ed, #b2fefa, #fbc2eb, #fd6e6a);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease-in-out infinite;
+  transition: background 0.5s;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 移除星空相关样式（如.animated-bg、.star等）可选 */
+
+.responsive-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* 卡片发光和圆角 */
+.ant-card {
+  border-radius: 18px !important;
+  box-shadow: 0 0 32px 4px #e3e8ee88, 0 4px 24px rgba(180,200,255,0.10) !important;
+  margin-bottom: 28px;
+  background: rgba(255,255,255,0.98) !important;
+  border: 1.5px solid #b6c6e6 !important;
+  backdrop-filter: blur(2px);
+}
+.ant-card-head {
+  border-radius: 18px 18px 0 0;
+  background: #f0f4fa;
+  border-bottom: 1.5px solid #b6c6e6;
+}
+.ant-card-head-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: #4e54c8;
+  text-shadow: 0 2px 8px #e3e8ee88;
+}
+
+/* 按钮渐变和动效 */
+.ant-btn-primary {
+  background: linear-gradient(90deg, #6dd5ed 0%, #b2fefa 100%) !important;
+  border: none !important;
+  box-shadow: 0 2px 12px #b2fefa88;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: #222;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+  background: linear-gradient(90deg, #b2fefa 0%, #6dd5ed 100%) !important;
+  transform: scale(1.06);
+  box-shadow: 0 4px 24px #b2fefa88;
+}
+.ant-btn-dangerous {
+  background: linear-gradient(90deg, #ffb88c 0%, #ff4e4e 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  font-weight: bold;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.ant-btn-dangerous:hover {
+  background: linear-gradient(90deg, #ff4e4e 0%, #ffb88c 100%) !important;
+  transform: scale(1.06);
+  box-shadow: 0 4px 24px #ffb88c88;
+}
+
+/* 输入框高对比度 */
+.ant-input, .ant-input-password input {
+  color: #222;
+  background: #f7f9fa;
+  border: 1.5px solid #b6c6e6;
+  box-shadow: 0 2px 8px #e3e8ee44;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.ant-input:focus, .ant-input-password input:focus {
+  border-color: #6dd5ed;
+  box-shadow: none;
+}
+.ant-input::placeholder, .ant-input-password input::placeholder {
+  color: #b6baff;
+  opacity: 0.8;
+}
+
+/* 标签色彩更鲜明 */
+.ant-tag-blue {
+  background: linear-gradient(90deg, #6dd5ed 0%, #b2fefa 100%);
+  color: #222;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 2px 8px #b2fefa44;
+}
+.ant-tag-green {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #222;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 2px 8px #43e97b44;
+}
+.ant-tag-purple {
+  background: linear-gradient(90deg, #a770ef 0%, #f6d365 100%);
+  color: #222;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 2px 8px #a770ef44;
+}
+.ant-tag-gold {
+  background: linear-gradient(90deg, #ffd700 0%, #ffb347 100%);
+  color: #222;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 2px 8px #ffd70044;
+}
+
+/* 未完成状态Tag高对比度 */
+.ant-tag-default {
+  background: #e3e8ee;
+  color: #222;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 2px 8px #b6c6e644;
+}
+
+/* 强制所有AntD控件字体为深色，输入框背景浅色，placeholder变亮 */
+.ant-card, .ant-card * {
+  color: #222;
+}
+.ant-form, .ant-form * {
+  color: #222;
+}
+.ant-btn, .ant-btn * {
+  color: #222;
+}
+
+/* Select、DatePicker、Tag、Button等控件高对比度美化 */
+.ant-select-selector,
+.ant-picker,
+.ant-picker-input > input {
+  background: #f7f9fa;
+  color: #222;
+  border: 1.5px solid #b6c6e6;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.ant-select-arrow,
+.ant-picker-suffix {
+  color: #6dd5ed;
+}
+
+.ant-select-dropdown,
+.ant-picker-dropdown {
+  background: #f7f9fa;
+  color: #222;
+}
+
+.ant-select-item-option-content {
+  color: #222;
+}
+
+.ant-tag {
+  font-size: 1em;
+  padding: 0.2em 0.8em;
+  border-radius: 8px;
+  margin-right: 0.5em;
+}
+
+/* 退出登录按钮 */
+.ant-card-extra .ant-btn {
+  background: linear-gradient(90deg, #ffb88c 0%, #ff4e4e 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #ffb88c44;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.ant-card-extra .ant-btn:hover {
+  background: linear-gradient(90deg, #ff4e4e 0%, #ffb88c 100%) !important;
+  transform: scale(1.06);
+  box-shadow: 0 4px 24px #ffb88c88;
+}
+
+/* 编辑、完成状态按钮 */
+.ant-btn:not(.ant-btn-primary):not(.ant-btn-dangerous) {
+  background: #f0f4fa;
+  color: #4e54c8;
+  border: 1.5px solid #b6c6e6;
+  font-weight: bold;
+  transition: background 0.15s, color 0.15s;
+}
+.ant-btn:not(.ant-btn-primary):not(.ant-btn-dangerous):hover {
+  background: #e3e8ee;
+  color: #222;
+}
+
+/* DatePicker弹窗样式 */
+.ant-picker-dropdown .ant-picker-panel {
+  background: #f7f9fa;
+  color: #222;
+}
+.ant-picker-cell-inner {
+  color: #222;
+}
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+  background: #6dd5ed;
+  color: #222;
+}
+
+/* 日期选择器弹窗字体和按钮更亮 */
+.ant-picker-dropdown,
+.ant-picker-panel,
+.ant-picker-header,
+.ant-picker-footer,
+.ant-picker-now-btn,
+.ant-picker-ok button {
+  background: #f7f9fa;
+  color: #222;
+  font-weight: 500;
+  border: none;
+}
+.ant-picker-cell-inner {
+  color: #222;
+}
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+  background: #6dd5ed;
+  color: #222;
+}
+.ant-picker-ok button {
+  background: linear-gradient(90deg, #6dd5ed 0%, #b2fefa 100%) !important;
+  color: #222 !important;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none !important;
+}
+.ant-picker-now-btn {
+  color: #6dd5ed;
+}
+
+/* 密码框只保留内层输入框边框，去除外层边框 */
+.ant-input-password {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+.ant-input-password .ant-input {
+  background: #f7f9fa;
+  color: #222;
+  border: 1.5px solid #b6c6e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #e3e8ee44;
+}
+
+/* 1. 输入框、密码框、选择框、日期框样式完全统一 */
+.ant-input,
+.ant-input-password,
+.ant-input-password .ant-input,
+.ant-picker,
+.ant-select-selector {
+  width: 100%;
+  height: 40px;
+  min-width: 0;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: #f7f9fa;
+  color: #222;
+  border: 1.5px solid #b6c6e6;
+  padding: 0 12px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* 2. 密码框小眼睛对齐 */
+.ant-input-password-icon {
+  right: 12px;
+}
+
+/* 3. 类型选择下拉选中项高对比度 */
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background: #6dd5ed;
+  color: #222;
+}
+
+/* 4. DatePicker小日历图标对齐 */
+.ant-picker-suffix {
+  right: 12px;
+}
+.ant-picker-input {
+  padding-right: 32px;
+}
+
+/* 3. 类型选择下拉列表内容高对比度 */
+.ant-select-dropdown {
+  background: #f7f9fa;
+}
+.ant-select-item-option-content {
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* 3. 日期选择器弹窗细节美化 */
+.ant-picker-content th,
+.ant-picker-header button,
+.ant-picker-time-panel-cell,
+.ant-picker-time-panel-cell .ant-picker-time-panel-cell-inner {
+  color: #222;
+  font-weight: 500;
+  background: transparent;
+}
+
+.ant-picker-header button {
+  background: none;
+  border: none;
+  color: #6dd5ed;
+  font-size: 1.1em;
+}
+
+.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner {
+  background: #6dd5ed;
+  color: #222;
+}
+
+.ant-picker-ok button {
+  background: linear-gradient(90deg, #6dd5ed 0%, #b2fefa 100%) !important;
+  color: #222 !important;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none !important;
+}
+
+.ant-picker-now-btn {
+  color: #6dd5ed;
+}
+
+/* DatePicker输入框只显示一个框，字体高对比度 */
+.ant-picker,
+.ant-picker-input,
+.ant-picker-input > input {
+  background: #f7f9fa;
+  color: #222;
+  border: 1.5px solid #b6c6e6;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #e3e8ee44;
+  height: 40px;
+  line-height: 1.5;
+}
+
+.ant-picker-input > input::placeholder {
+  color: #b6baff;
+  opacity: 0.9;
+}
+
+/* 美化任务输入框为可拖动风格 */
+.ant-input-textarea textarea {
+  resize: both;
+  background: #f7f9fa;
+  color: #222;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1.5px solid #b6c6e6;
+  box-shadow: 0 2px 8px #e3e8ee22;
+  min-height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* 针对AntD特殊结构再加一层优先级，彻底覆盖 */
+div.ant-input-textarea > textarea.ant-input {
+  resize: both;
+  background: #f7f9fa;
+  color: #222;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1.5px solid #b6c6e6;
+  box-shadow: 0 2px 8px #e3e8ee22;
+  min-height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* 去除Form.Item的多余边框和背景 */
+.ant-form-item {
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 12px;
+}
+
+/* 让密码输入栏和用户名输入栏完全对齐 */
+.ant-input-password {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: #f7f9fa;
+  border-radius: 8px;
+  border: 1.5px solid #b6c6e6;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: 40px;
+}
+
+.ant-input-password .ant-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 36px 0 12px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  font-size: 1rem;
+  color: #222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.ant-input-password-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #6dd5ed;
+  cursor: pointer;
+  font-size: 1.2em;
+  background: transparent;
+  padding: 0;
+}
+
+/* 彻底只保留DatePicker外层一个框 */
+.ant-picker {
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ant-picker-input {
+  background: none;
+  border: none;
+  box-shadow: none;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.ant-picker-input > input {
+  background: none;
+  border: none;
+  box-shadow: none;
+  height: 100%;
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 8px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 只保留密码框外层边框，去除内层input的边框和背景 */
+.ant-input-password .ant-input {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0 12px;
+}
+
+/* 小日历图标左移，padding-right减小 */
+.ant-picker-input {
+  padding-right: 20px;
+}
+.ant-picker-suffix {
+  right: 6px;
+}
+
+/* 表单label左对齐 */
+.ant-form-item-label > label {
+  text-align: left;
+  width: 100%;
+  display: block;
+  padding-left: 2px;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.95;
+  animation: twinkle 2.5s infinite ease-in-out;
+  box-shadow: 0 0 12px 2px #fff;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.95; }
+  50% { opacity: 0.2; }
+}
+
+/* 保证AntD Modal弹窗在最顶层 */
+.ant-modal-root, .ant-modal-mask, .ant-modal-wrap {
+  z-index: 2000 !important;
+}
+
+/* 保证Modal按钮可见 */
+.ant-modal-footer .ant-btn {
+  z-index: 2001 !important;
+}
+
+/* 任务标题、描述输入框字体颜色优化 */
+.ant-input-textarea textarea,
+.ant-input,
+.ant-input-password input {
+  color: #222;
+  background: #f7f9fa;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1.5px solid #b6c6e6;
+  box-shadow: 0 2px 8px #e3e8ee22;
+  min-height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+}
+.ant-input-textarea textarea::placeholder,
+.ant-input::placeholder,
+.ant-input-password input::placeholder {
+  color: #b6baff;
+  opacity: 0.8;
+}
+
+/* 开始时间、截止时间输入框内文字左对齐 */
+.ant-picker-input > input {
+  text-align: left;
+  padding-left: 12px;
+  padding-right: 32px;
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+  background: #f7f9fa;
+  border-radius: 8px;
+}
+
+/* 用户名、密码输入栏高度、边距、字体完全对齐 */
+.ant-input-password,
+.ant-input-password .ant-input,
+.ant-input {
+  height: 40px;
+  min-width: 0;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: #f7f9fa;
+  color: #222;
+  border: 1.5px solid #b6c6e6;
+  padding: 0 12px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.ant-input-password .ant-input {
+  padding: 0 36px 0 12px;
+}
+
+.ant-input-password-icon {
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6dd5ed;
+}
+
+/* 让日期选择框内容和placeholder居中且有留白 */
+.ant-picker-input > input {
+  text-align: center;
+  padding-left: 18px;
+  padding-right: 38px;
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+  background: #f7f9fa;
+  border-radius: 8px;
+}
+
+/* 统一所有输入框内容和placeholder颜色 */
+.ant-input,
+.ant-input-password input,
+.ant-input-textarea textarea {
+  color: #222;
+  background: #f7f9fa;
+}
+
+.ant-input::placeholder,
+.ant-input-password input::placeholder,
+.ant-input-textarea textarea::placeholder {
+  color: #b0b3c6;
+  opacity: 1;
+}
+
+/* 日期选择框内容左对齐，图标重叠 */
+.ant-picker-input > input {
+  text-align: left !important;
+  padding-left: 12px !important;
+  padding-right: 36px !important;
+}
+.ant-picker-suffix,
+.ant-picker-clear {
+  right: 12px !important;
+}
