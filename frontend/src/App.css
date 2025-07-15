@@ -411,8 +411,8 @@ body {
   border: 1.5px solid #b6c6e6;
   box-shadow: 0 2px 8px #e3e8ee22;
   min-height: 40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   line-height: 1.5;
 }
 
@@ -426,8 +426,8 @@ div.ant-input-textarea > textarea.ant-input {
   border: 1.5px solid #b6c6e6;
   box-shadow: 0 2px 8px #e3e8ee22;
   min-height: 40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   line-height: 1.5;
 }
 
