@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/earth_online_quests', {
+    await mongoose.connect('mongodb://8.137.70.233:27017/earth_online_quests', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
