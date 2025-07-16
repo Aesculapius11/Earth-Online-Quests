@@ -664,3 +664,21 @@ div.ant-input-textarea > textarea.ant-input {
 .ant-picker-clear {
   right: 12px !important;
 }
+
+.task-title, .task-desc {
+  word-break: break-all;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.ant-list-item-meta-title {
+  word-break: break-all;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.ant-list-item-meta-description {
+  word-break: break-all;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
