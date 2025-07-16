@@ -4,7 +4,7 @@ Earth Online Quests 是一个现代化的任务管理平台，前后端分离，
 
 ## 在线体验
 
-👉 [点击访问 Earth Online Quests 正式站点](https://earthonline.antares.xin/)
+👉 [点击访问 Earth Online Quests demo站点](https://earthonline.antares.xin/)
 
 ## 项目特色
 - 现代化 UI，支持浅色渐变主题
