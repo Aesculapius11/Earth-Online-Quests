@@ -21,7 +21,7 @@ app.use(express.json());
 app.use('/api/user', require('./routes/user'));
 app.use('/api/task', require('./routes/task'));
 
-const PORT = 3000;
+const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`后端服务已启动，端口：${PORT}`);
 });

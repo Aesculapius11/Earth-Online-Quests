@@ -1,8 +1,9 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://8.137.70.233:27017/earth_online_quests', {
+    await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
