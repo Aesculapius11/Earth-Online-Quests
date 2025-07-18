@@ -44,6 +44,7 @@ body {
   }
 }
 
+/* 移除星空相关样式（如.animated-bg、.star等）可选 */
 
 .responsive-container {
   min-height: 100vh;
@@ -60,8 +61,6 @@ body {
 
 /* 卡片发光和圆角 */
 .ant-card {
-  width: 90vw !important;
-  max-width: 1200px !important;
   border-radius: 18px !important;
   box-shadow: 0 0 32px 4px #e3e8ee88, 0 4px 24px rgba(180,200,255,0.10) !important;
   margin-bottom: 28px;
@@ -411,7 +410,6 @@ body {
   font-size: 1rem;
   border: 1.5px solid #b6c6e6;
   box-shadow: 0 2px 8px #e3e8ee22;
-  height: 40px !important;
   min-height: 40px;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -688,49 +686,39 @@ div.ant-input-textarea > textarea.ant-input {
 /* 响应式：小屏幕下ant-list-item-action按钮竖排 */
 @media (max-width: 600px) {
   .ant-list-item-action {
-    display: inline-flex !important;   /* 让按钮组宽度自适应内容 */
     flex-direction: column !important;
-    align-items: center !important;    /* 居中按钮 */
-    justify-content: flex-start !important;
-    width: auto !important;            /* 关键：不继承父级宽度 */
-    margin-top: 8px;
-    margin-bottom: 8px;
+    align-items: flex-start !important;
+    gap: 8px !important;
   }
   .ant-list-item-action > li {
     width: 100%;
-    display: flex;
-    justify-content: center;
     margin: 0 !important;
-    padding: 0 !important;
   }
   .ant-list-item-action .ant-btn {
-    width: 120px; /* 你可以根据实际需要调整 */
-    min-width: 80px;
-    max-width: 100%;
-    font-size: 0.95rem !important;
-    padding: 0 8px !important;
+    width: 100%;
     margin-bottom: 4px;
-    box-sizing: border-box;
   }
-
-
   .ant-card {
-    width: 90vw !important;
     margin: 8px 0 !important;
     padding: 8px !important;
-    border-radius: 8px !important;
-    box-shadow: 0 2px 8px #e3e8ee44 !important;
-  }
-  .ant-card-head {
-    border-radius: 8px 8px 0 0 !important;
-    padding: 8px 12px !important;
+    border-radius: 10px !important;
   }
   .ant-card-head-title {
-    font-size: 1.05rem !important;
-    padding: 0 !important;
+    font-size: 1rem;
   }
-  .ant-card-body {
-    padding: 8px 4px !important;
+  .ant-btn, .ant-input, .ant-picker, .ant-select-selector {
+    height: 36px !important;
+    font-size: 0.98rem !important;
+  }
+  .ant-form-item {
+    margin-bottom: 8px !important;
+  }
+  .ant-list-item-meta-title,
+  .ant-list-item-meta-description {
+    font-size: 0.98rem;
+    padding-left: 2px;
+    padding-right: 2px;
+    word-break: break-all;
   }
   
 }

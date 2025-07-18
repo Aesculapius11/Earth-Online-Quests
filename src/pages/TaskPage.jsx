@@ -139,10 +139,10 @@ export default function TaskPage() {
           style={{ display: 'flex', flexWrap: 'wrap', gap: 16 }}
         >
           <Form.Item name="title" label="任务标题" rules={[{ required: true, message: '请输入任务标题' }]} style={{ maxWidth: 220 }}>
-            <Input.TextArea placeholder="在此处输入任务标题" style={{ minHeight: 40,height: 40 }} />
+            <Input.TextArea placeholder="在此处输入任务标题" style={{ minHeight: 40 }} />
           </Form.Item>
           <Form.Item name="description" label="描述" style={{ maxWidth: 220 }}>
-            <Input.TextArea placeholder="在此处输入任务描述" style={{ minHeight: 40,height: 40 }} />
+            <Input.TextArea placeholder="在此处输入任务描述" style={{ minHeight: 40 }} />
           </Form.Item>
           <Form.Item name="type" label="类型" rules={[{ required: true }]} style={{ maxWidth: 220 }}>
             <Select style={{ height: 40 }} dropdownStyle={{ fontSize: '1rem' }}>
